@@ -3,7 +3,7 @@ let attempt = document.getElementById('attempt');
 
 function guess() {
     let input = document.getElementById('user-guess');
-    //add functionality to guess function here
+
     if(answer.value == '' || attempt.value == ''){
       setHiddenFields();
     }
@@ -26,12 +26,9 @@ function guess() {
     }
 }
 
-//implement new functions here
 function getResults(input){
-  let html = '<div class="row"><span class="col-md-6">'
-  + input
-  + '</span><div class="col-md-6">';
-  for(i = 0 i < input.length; i++){
+  let html = '<div class="row"><span class="col-md-6">' + input + '</span><div class="col-md-6">';
+  for(i = 0; i < input.length; i++){
     if(input.charAt(i) == answer.value.charAt(i)){
       html += '<span class="glyphicon glyphicon-ok"></span>';
     } else if(answer.value.indexOf(input.charAt(i)) > -1) {
